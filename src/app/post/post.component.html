@@ -1,0 +1,16 @@
+<li class="list-group-item clearfix">
+  <h2>{{ title }} <small>{{ createdAt | date:"short" }}</small></h2>
+  <p>{{ content }}</p>
+  <div class="btn-group pull-right">
+    <button type="button" class="btn btn-default" title="{{ printLovesIt() }}">
+      <i class="glyphicon glyphicon-heart"></i>
+      {{ lovesIt }}
+    </button>
+    <button type="button" class="btn btn-success" title="Love It !">
+      <i class="glyphicon glyphicon-thumbs-up"></i>
+    </button>
+    <button type="button" class="btn btn-danger" title="Don't love It !">
+      <i class="glyphicon glyphicon-thumbs-down"></i>
+    </button>
+  </div>
+</li>
