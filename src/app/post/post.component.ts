@@ -17,15 +17,22 @@ export class PostComponent implements OnInit {
   ngOnInit() {
   }
 
-  printLovesIt() {
-    const $count = this.lovesIt;
-    let $string = ' like';
+  getLiClass() {
+    const count = this.lovesIt;
 
-    if ( $count > 1 || $count < -1) {
-      $string += 's';
+    if (count > 0) {
+      return 'list-group-item-success';
+    } else if (count < 0) {
+      return 'list-group-item-danger';
     }
+  }
 
-    return $count + $string;
+  onLove() {
+    this.lovesIt ++;
+  }
+
+  onDontLove() {
+    this.lovesIt --;
   }
 
 }

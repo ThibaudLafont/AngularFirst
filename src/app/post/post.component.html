@@ -1,15 +1,33 @@
-<li class="list-group-item clearfix">
-  <h2>{{ title }} <small>{{ createdAt | date:"short" }}</small></h2>
+<!-- Parent -->
+<li [ngClass]="'clearfix list-group-item ' + getLiClass()">
+
+  <!-- Title & Date -->
+  <h2>
+    {{ title }}
+    <small>{{ createdAt | date:"short" }}</small>
+  </h2>
+
+
+  <!-- Content -->
   <p>{{ content }}</p>
+
+
+  <!-- Buttons -->
   <div class="btn-group pull-right">
-    <button type="button" class="btn btn-default" title="{{ printLovesIt() }}">
-      <i class="glyphicon glyphicon-heart"></i>
+    <!-- Plus button -->
+    <button type="button"
+            class="btn btn-success"
+            title="Love It !"
+            (click)="onLove()">
+      <i class="glyphicon glyphicon-thumbs-up"></i>
       {{ lovesIt }}
     </button>
-    <button type="button" class="btn btn-success" title="Love It !">
-      <i class="glyphicon glyphicon-thumbs-up"></i>
-    </button>
-    <button type="button" class="btn btn-danger" title="Don't love It !">
+
+    <!-- Less button -->
+    <button type="button"
+            class="btn btn-danger"
+            title="Don't love It !"
+            (click)="onDontLove()">
       <i class="glyphicon glyphicon-thumbs-down"></i>
     </button>
   </div>
