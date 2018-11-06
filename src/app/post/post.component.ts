@@ -1,24 +1,24 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {Post} from './Type/Post';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
+
 export class PostComponent implements OnInit {
 
-  @Input() title: string;
-  @Input() content: string;
-  @Input() lovesIt: number;
-  @Input() createdAt: Date;
+  @Input() post: Post;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
   getLiClass() {
-    const count = this.lovesIt;
+    const count = this.post.lovesIt;
 
     if (count > 0) {
       return 'list-group-item-success';
@@ -28,12 +28,13 @@ export class PostComponent implements OnInit {
   }
 
   onLove() {
-    this.lovesIt ++;
+    this.post.lovesIt ++;
   }
 
   onDontLove() {
-    this.lovesIt --;
+    this.post.lovesIt --;
   }
 
 }
+
 

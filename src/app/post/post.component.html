@@ -3,13 +3,13 @@
 
   <!-- Title & Date -->
   <h2>
-    {{ title }}
-    <small>{{ createdAt | date:"short" }}</small>
+    {{ post.title }}
+    <small>{{ post.createdAt | date:"short" }}</small>
   </h2>
 
 
   <!-- Content -->
-  <p>{{ content }}</p>
+  <p>{{ post.content }}</p>
 
 
   <!-- Buttons -->
@@ -20,7 +20,7 @@
             title="Love It !"
             (click)="onLove()">
       <i class="glyphicon glyphicon-thumbs-up"></i>
-      {{ lovesIt }}
+      {{ post.lovesIt }}
     </button>
 
     <!-- Less button -->
