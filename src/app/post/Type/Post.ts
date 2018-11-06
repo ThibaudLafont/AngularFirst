@@ -1,10 +1,8 @@
-import {Input} from '@angular/core';
-
 class Post {
-  @Input() title: string;
-  @Input() content: string;
-  @Input() lovesIt: number;
-  @Input() createdAt: Date;
+  title: string;
+  content: string;
+  lovesIt: number;
+  createdAt: Date;
 }
 
 export { Post as Post};
